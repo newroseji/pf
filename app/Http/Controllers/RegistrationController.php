@@ -18,9 +18,20 @@
 			// validate the request
 			$this->validate($request,
 				[
-					'name'     => 'required',
-					'email'    => 'required|email|unique:users',
-					'password' => 'required'
+					'username' => 'required|min:3|max:50|unique:users',
+					'firstname' => 'required|min:3|max:50',
+					'middlename' => 'max:20',
+					'lastname'  => 'required|min:3|max:50',
+					'address1'  => 'required|min:3|max:60',
+					'address2'  => 'max:30',
+					'city'      => 'required|min:3|max:50',
+					'state'     => 'required|min:2|max:2',
+					'zip'       => 'required|min:5|max:55',
+					'country'   => 'required|min:2|max:50',
+					'email'     => 'required|email|unique:users',
+					'password'  => 'required|min:6|max:50|confirmed',
+					'password_confirmation'=>'required|min:6|max:50'
+
 				]);
 
 			// create the user

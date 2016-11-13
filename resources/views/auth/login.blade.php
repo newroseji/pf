@@ -28,3 +28,7 @@
         </div>
     </form>
     @stop
+@section('footer')
+    @include("pages.footer")
+@stop
+
